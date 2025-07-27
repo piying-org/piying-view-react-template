@@ -1,2 +1,11 @@
 @import "tailwindcss";
 @plugin "daisyui";
+.pi-valid > input {
+  @apply border-success;
+}
+.pi-invalid > input {
+  @apply border-error;
+}
+.pi-untouched.pi-invalid:not(.pi-dirty) > input {
+  @apply border-warning;
+}

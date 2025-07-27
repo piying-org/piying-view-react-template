@@ -12,6 +12,7 @@
   "dependencies": {
     "@piying/view-react": "^1.0.1",
     "@tailwindcss/vite": "^4.1.11",
+    "@valibot/i18n": "^1.0.0",
     "daisyui": "^5.0.47",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
