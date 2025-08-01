@@ -6,6 +6,8 @@ import { InputRadio } from './input-radio';
 import { InputText } from './input-text';
 import { LabelWrapper } from './wrapper/label-wrapper';
 import { ValidatorWrapper } from './wrapper/validator-wrapper';
+import { ArrayRwGroup } from './group/array-rw';
+import { MultiCheckbox } from './multi-checkbox';
 
 export const fieldConfig = {
   types: {
@@ -14,6 +16,8 @@ export const fieldConfig = {
     radio: { type: InputRadio },
     boolean: { type: InputCheckbox, wrappers: ['label'] },
     fieldset: { type: FieldsetGroup },
+    'multi-checkbox': { type: MultiCheckbox },
+    'array-rw': { type: ArrayRwGroup },
   },
   wrappers: {
     label: {
@@ -23,4 +27,4 @@ export const fieldConfig = {
       type: ValidatorWrapper,
     },
   },
-} as PiViewConfig
+} as PiViewConfig;
