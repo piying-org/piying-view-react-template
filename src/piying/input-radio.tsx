@@ -1,6 +1,6 @@
 import type { ControlValueAccessor } from '@piying/view-core';
 import { CVA, useControlValueAccessor, useInputRadioModel } from '@piying/view-react';
-import { useImperativeHandle, useMemo, useState } from 'react';
+import { useImperativeHandle, useMemo } from 'react';
 import { DefaultOptionConvert, getRadioIndex, transformOptions, type OptionConvert } from './util/options';
 
 interface PiInputOptions {
@@ -11,7 +11,7 @@ interface PiInputOptions {
 export function InputRadio(props: PiInputOptions) {
   const { cva, cvaa } = useControlValueAccessor();
   useImperativeHandle(props[CVA], () => cva, [cva]);
-  let name = useMemo(() => {
+  const name = useMemo(() => {
     return `radio-${getRadioIndex()}`;
   }, []);
   const resolvedOptions = useMemo(() => {

@@ -6,14 +6,15 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint .",
+    "lint": "eslint . --fix",
     "preview": "vite preview"
   },
   "dependencies": {
-    "@piying/view-react": "^1.0.1",
+    "@piying/view-react": "^1.0.2",
     "@tailwindcss/vite": "^4.1.11",
     "@valibot/i18n": "^1.0.0",
     "daisyui": "^5.0.47",
+    "eslint-plugin-unused-imports": "^4.1.4",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "tailwindcss": "^4.1.11",

@@ -1,7 +1,7 @@
 import { PI_VIEW_FIELD_TOKEN, useSignalToRef } from '@piying/view-react';
 import { useContext } from 'react';
 import { fieldControlStatusClass } from '@piying/view-core';
-import { summarize } from 'valibot';
+import { errorString } from '../util/error-string';
 
 export function ValidatorWrapper(props: { children: any }) {
   const field = useContext(PI_VIEW_FIELD_TOKEN);
@@ -10,16 +10,7 @@ export function ValidatorWrapper(props: { children: any }) {
 
   const errorStr = useSignalToRef(field, (field) => {
     const errors = field?.form.control!.errors;
-    if (errors) {
-      const valibot = errors['valibot'];
-      if (valibot) {
-        return summarize(valibot);
-      } else {
-        return Object.values(field.form.root!.errors!)
-          .map((item) => (typeof item === 'string' ? item : JSON.stringify(item)))
-          .join('\n');
-      }
-    }
+    return errorString(errors);
   });
 
   const isChangedStatus = useSignalToRef(field, (field) => field?.form.control?.dirty$$() || field?.form.control?.touched$$());
