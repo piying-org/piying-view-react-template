@@ -34,9 +34,10 @@ export function FormHelp(props: FormHelpOptions) {
         }, props2['submitDelay']);
       });
     }
+    field.form.root!.emitSubmit();
     alert(JSON.stringify(value, undefined, 4));
     setSubmitting(false);
-  }, [value, props2]);
+  }, [value, props2, field]);
   const resetForm = useCallback(() => {
     control.reset(initData);
   }, [initData]);
@@ -63,12 +64,8 @@ export function FormHelp(props: FormHelpOptions) {
         ) : undefined}
 
         <div className="flex gap-2 items-center">
-          <button disabled={control.invalid || isSubmitting} className="btn btn-primary" onClick={submit}>
-            Submit
-          </button>
-          <button className="btn btn-outline btn-secondary" onClick={resetForm}>
-            Reset
-          </button>
+          <input type="submit" disabled={control.invalid || isSubmitting} className="btn btn-primary" onClick={submit} />
+          <input type="reset" className="btn btn-outline btn-secondary" onClick={resetForm} />
           <button className="btn btn-outline btn-accent" onClick={saveInit}>
             Update Intial Values
           </button>

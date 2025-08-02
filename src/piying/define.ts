@@ -8,6 +8,7 @@ import { LabelWrapper } from './wrapper/label-wrapper';
 import { ValidatorWrapper } from './wrapper/validator-wrapper';
 import { ArrayRwGroup } from './group/array-rw';
 import { MultiCheckbox } from './multi-checkbox';
+import { FormHelp } from './form-help';
 
 export const fieldConfig = {
   types: {
@@ -18,6 +19,7 @@ export const fieldConfig = {
     fieldset: { type: FieldsetGroup },
     'multi-checkbox': { type: MultiCheckbox },
     'array-rw': { type: ArrayRwGroup },
+    formHelper: { type: FormHelp },
   },
   wrappers: {
     label: {

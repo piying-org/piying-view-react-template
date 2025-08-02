@@ -1,5 +1,5 @@
 import * as v from 'valibot';
-import { patchWrappers, setComponent, patchInputs } from '@piying/view-core';
+import { patchWrappers, setComponent, patchInputs, NFCSchema } from '@piying/view-core';
 import { fieldConfig } from './piying/define';
 import { CustomNgBuilder } from './piying/custom.builder';
 import { PiyingView } from '@piying/view-react';
@@ -19,6 +19,7 @@ const schema = v.pipe(
       v.title('radio1-title')
     ),
     checkbox1: v.optional(v.boolean()),
+    __formHelper:v.pipe(NFCSchema,setComponent('formHelper'))
   }),
   v.title('form'),
   setComponent('fieldset')
