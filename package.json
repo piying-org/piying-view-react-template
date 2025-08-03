@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@piying/view-react": "^1.0.3",
+    "@piying/view-react": "^1.0.5",
     "@tailwindcss/vite": "^4.1.11",
     "@valibot/i18n": "^1.0.0",
     "daisyui": "^5.0.47",
