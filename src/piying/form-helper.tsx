@@ -4,7 +4,7 @@ import JSONFormatter from 'json-formatter-js';
 import { errorString } from './util/error-string';
 
 interface FormHelpOptions {}
-export function FormHelp(props: FormHelpOptions) {
+export function FormHelper(props: FormHelpOptions) {
   const field = useContext(PI_VIEW_FIELD_TOKEN)!;
   const props2 = useSignalToRef(field, () => field?.props());
 
