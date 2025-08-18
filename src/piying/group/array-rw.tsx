@@ -15,7 +15,7 @@ export function ArrayRwGroup(props: { fields: PiResolvedViewFieldConfig[]; minLe
     [field]
   );
 
-  const list = useSignalToRef(field, (field) => field.fieldArray!());
+  const list = useSignalToRef(field, (field) => field.children!());
 
   const btnDisabled = useMemo(() => list.length <= props.minLength, [list, props.minLength]);
   const itemClass = useMemo(() => {
@@ -25,7 +25,7 @@ export function ArrayRwGroup(props: { fields: PiResolvedViewFieldConfig[]; minLe
     <>
       <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4 w-full">
         {props2?.['title'] ? <legend className="fieldset-legend">{props2['title']}</legend> : undefined}
-        {props.fields.map((field, index) => {
+        {list.map((field, index) => {
           return (
             <div key={index} className='flex items-center gap-2 *:first:flex-1'>
               <PiyingFieldTemplate field={field} key={index}></PiyingFieldTemplate>

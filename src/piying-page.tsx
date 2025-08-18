@@ -19,6 +19,7 @@ const schema = v.pipe(
       v.title('radio1-title')
     ),
     checkbox1: v.optional(v.boolean()),
+    list1: v.pipe(v.array(v.pipe(v.object({ k1: v.string() }), setComponent('fieldset'))), setComponent('array-rw')),
     __formHelper: v.pipe(NFCSchema, setComponent('formHelper')),
   }),
   v.title('form'),
