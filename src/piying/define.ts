@@ -9,13 +9,14 @@ import { ValidatorWrapper } from './wrapper/validator-wrapper';
 import { ArrayRwGroup } from './group/array-rw';
 import { MultiCheckbox } from './multi-checkbox';
 import { lazy } from 'react';
+import { actions } from '@piying/view-core';
 
 export const fieldConfig = {
   types: {
-    string: { type: InputText, wrappers: ['label'] },
-    number: { type: InputNumber, wrappers: ['label'] },
+    string: { type: InputText, actions: [actions.wrappers.set(['label'])] },
+    number: { type: InputNumber, actions: [actions.wrappers.set(['label'])] },
     radio: { type: InputRadio },
-    boolean: { type: InputCheckbox, wrappers: ['label'] },
+    boolean: { type: InputCheckbox, actions: [actions.wrappers.set(['label'])] },
     fieldset: { type: FieldsetGroup },
     'multi-checkbox': { type: MultiCheckbox },
     'array-rw': { type: ArrayRwGroup },
