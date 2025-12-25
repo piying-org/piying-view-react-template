@@ -6,7 +6,7 @@ import { PiyingView } from '@piying/view-react';
 const schema = v.pipe(
   v.object({
     text1: v.pipe(v.optional(v.string()), v.title('text1-label')),
-    number1: v.pipe(v.number(), v.title('number1'), actions.wrappers.patch(['label', 'validator'])),
+    number1: v.pipe(v.number(), v.title('number1'), actions.wrappers.patch(['validator'])),
     radio1: v.pipe(
       v.optional(v.picklist(['v1', 'v2'])),
       setComponent('radio'),
