@@ -7,6 +7,7 @@ interface PiInputOptions {
   [CVA]: React.RefObject<ControlValueAccessor>;
   options?: any[];
   optionConvert?: OptionConvert;
+  onIndexChange?: (index: number) => void;
 }
 export function InputRadio(props: PiInputOptions) {
   const { cva, cvaa } = useControlValueAccessor();
@@ -22,7 +23,16 @@ export function InputRadio(props: PiInputOptions) {
       {resolvedOptions.map((field, index) => {
         return (
           <div key={index}>
-            <input className="radio" type="radio" name={name} {...useInputRadioModel(cvaa, field.value)} />
+            <input
+              className="radio"
+              type="radio"
+              name={name}
+              {...useInputRadioModel(cvaa, field.value)}
+              onChange={() => {
+                cvaa.valueChange(field.value);
+                props.onIndexChange?.(index);
+              }}
+            />
             <div className="label">{field.label}</div>
           </div>
         );

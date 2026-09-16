@@ -30,4 +30,4 @@ export const fieldConfig = {
       type: ValidatorWrapper,
     },
   },
-} as PiViewConfig;
+} satisfies PiViewConfig;
