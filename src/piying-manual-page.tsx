@@ -3,7 +3,6 @@ import { setComponent, typedFieldPipe } from '@piying/view-core';
 import { Field, InjectorToken, PiyingFieldTemplate, convertToField, typedFieldComponentPipe } from '@piying/view-react';
 import { fieldConfig } from './piying/define';
 import { CustomNgBuilder } from './piying/custom.builder';
-
 const Schema = v.object({
   text1: v.pipe(v.optional(v.string()), v.title('text1-label')),
   number1: v.pipe(v.number(), v.title('number1')),
